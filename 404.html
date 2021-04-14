@@ -4,8 +4,8 @@
     <script>
       let cur = globalThis.location.pathname;
       let pah = cur.split('/').filter((s) => s != '');
-      console.log('cur', cur);
-      console.log('pah', pah);
+      // console.log('cur', cur);
+      // console.log('pah', pah);
 
       if (pah.length > 2 && cur != '/' + pah.join('/')) {
         // Remove trailing slashes
@@ -14,6 +14,7 @@
       } else if (globalThis.location.href != globalThis.location.origin) {
         // Move up
         console.log('Move up');
+        pah.pop();
         globalThis.location.href = '/' + pah.join('/');
       } else {
         // Go to origin

@@ -8,7 +8,7 @@
       if (pah.length > 2 && cur != '/' + pah.join('/')) {
         // Remove trailing slashes
         globalThis.location.href = '/' + pah.join('/');
-      } else if (location.href != location.origin) {
+      } else if (globalThis.location.href != globalThis.location.origin) {
         // Move up
         globalThis.location.href = '/' + pah.join('/');
       } else {

@@ -1,3 +1,1 @@
-## milotheirself.github.io
-
-> This is only a placeholder
+## MiloTheirself.github.io

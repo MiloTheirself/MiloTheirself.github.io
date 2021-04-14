@@ -3,13 +3,16 @@
   <head>
     <script>
       if (globalThis.location.href.split('/').length > 4 && globalThis.location.href.endsWith('/')) {
+        console.log('trim');
         globalThis.location.href = globalThis.location.href.slice(0, -1);
       } else if (location.href != location.origin) {
+        console.log('cut');
         let cut = globalThis.location.href.endsWith('/')
           ? globalThis.location.href.slice(0, -1).lastIndexOf('/') //
           : globalThis.location.href.lastIndexOf('/');
         globalThis.location.href = globalThis.location.href.substring(0, cut == -1 ? url.length : cut + 1);
       } else {
+        console.log('re');
         globalThis.location.href = 'https://github.com/milotheirself/';
       }
     </script>

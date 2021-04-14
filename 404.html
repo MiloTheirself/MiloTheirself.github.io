@@ -4,15 +4,20 @@
     <script>
       let cur = globalThis.location.pathname;
       let pah = urn.split('/').filter((s) => s != '');
+      console.log('cur', cur);
+      console.log('pah', pah);
 
       if (pah.length > 2 && cur != '/' + pah.join('/')) {
         // Remove trailing slashes
+        console.log('Remove trailing slashes');
         globalThis.location.href = '/' + pah.join('/');
       } else if (globalThis.location.href != globalThis.location.origin) {
         // Move up
+        console.log('Move up');
         globalThis.location.href = '/' + pah.join('/');
       } else {
         // Go to origin
+        console.log('Go to origin');
         globalThis.location.href = 'https://github.com/milotheirself/';
       }
     </script>

@@ -3,7 +3,7 @@
   <head>
     <script>
       let cur = globalThis.location.pathname;
-      let pah = urn.split('/').filter((s) => s != '');
+      let pah = cur.split('/').filter((s) => s != '');
       console.log('cur', cur);
       console.log('pah', pah);
 

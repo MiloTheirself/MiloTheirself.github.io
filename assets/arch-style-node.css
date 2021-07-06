@@ -62,14 +62,17 @@
 }
 
 .arch-node.page-ribben > *:first-child {
-  pointer-events: none;
-  transition: margin var(--timing-show) var(--timing-func-ent), opacity var(--timing-show) var(--timing-func-ent);
-}
-
-.arch-node.page-ribben:not(:hover):not(:focus) > *:first-child {
   margin-left: -24px;
   opacity: 0;
+  pointer-events: none;
   transition: margin var(--timing-hide) var(--timing-func-ent), opacity var(--timing-hide) var(--timing-func-ent);
+}
+
+.arch-node.page-ribben:hover > *:first-child,
+.arch-node.page-ribben:focus > *:first-child {
+  margin-left: 0px;
+  opacity: 1;
+  transition: margin var(--timing-show) var(--timing-func-ent), opacity var(--timing-show) var(--timing-func-ent);
 }
 
 /** */

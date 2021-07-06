@@ -7,18 +7,14 @@
 
     <!-- -->
     <script>
-      const urn = location.pathname.split('/');
-      const par =
-        location.search === ''
-          ? {}
-          : JSON.parse('{"' + location.search.substring(1).replace(/&/g, '","').replace(/=/g, '":"') + '"}', (key, value) => {
-              return key === '' ? value : decodeURIComponent(value);
-            });
+      let par = new URLSearchParams(globalThis.location.search).get('redirect');
+      let urn = location.pathname.split('/');
 
       urn.shift();
-      par.redirect = par.redirect ? par.redirect : '';
-      par.redirect = `/${urn.pop()}${par.redirect}`;
-      globalThis.location.href = `/${urn.join('/')}?redirect=${par.redirect}`;
+      par = par ? par : '';
+      par = `/${urn.pop()}${par}`;
+
+      globalThis.location.href = `/${urn.join('/')}?redirect=${par}`;
     </script>
     <!-- -->
   </head>

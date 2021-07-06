@@ -1,0 +1,92 @@
+/** */
+.arch-node.backdrop {
+  z-index: -1;
+  position: fixed;
+  top: 0em;
+  left: 0em;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+
+  pointer-events: none;
+}
+
+.arch-node.backdrop-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  width: 100%;
+  height: 100%;
+}
+
+.arch-node.backdrop-container > figure {
+  display: block;
+
+  width: calc(100vw - 8em);
+  height: calc(100vh - 8em);
+  max-height: 20em;
+  margin: 4em;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+
+/** */
+.arch-node.page-ribben {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: noen;
+
+  margin: 2em auto 2em 2em;
+
+  text-decoration: none;
+  color: currentColor;
+  line-height: 24px;
+}
+
+.arch-node.page-ribben:hover,
+.arch-node.page-ribben:focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+.arch-node.page-ribben > * {
+  margin-right: 0.25em;
+}
+
+.arch-node.page-ribben > *:first-child {
+  pointer-events: none;
+  transition: margin var(--timing-show) var(--timing-func-ent), opacity var(--timing-show) var(--timing-func-ent);
+}
+
+.arch-node.page-ribben:not(:hover):not(:focus) > *:first-child {
+  margin-left: -24px;
+  opacity: 0;
+  transition: margin var(--timing-hide) var(--timing-func-ent), opacity var(--timing-hide) var(--timing-func-ent);
+}
+
+/** */
+.arch-node.icon {
+  display: block;
+  flex: none;
+
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+
+/** */
+.arch-node.content {
+  margin: 3em 2em 0em 2em;
+}
+
+.arch-node.content h3 {
+  margin: 0em 0em 1em;
+
+  font-weight: 500;
+}

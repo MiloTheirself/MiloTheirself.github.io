@@ -8,13 +8,8 @@
     <!-- -->
     <script>
       let par = new URLSearchParams(globalThis.location.search).get('redirect');
-      let urn = location.pathname.split('/');
-
-      urn.shift();
-      par = par ? par : '';
-      par = `/${urn.pop()}${par}`;
-
-      globalThis.location.href = `/${urn.join('/')}?redirect=${par}`;
+      let urn = location.pathname.split('/').slice(1);
+      globalThis.location.href = `/${urn.join('/')}?redirect=//${urn.pop()}${par ? par : ''}`;
     </script>
     <!-- -->
   </head>
